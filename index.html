@@ -620,7 +620,7 @@
     <div class="hero-text">
       <p class="hero-eyebrow">Game Art & Development</p>
       <h1 class="hero-name">Eric<br><span>Dominguez</span></h1>
-      <p class="hero-bio">First-gen CS student at UConn. Self-taught. Community-driven. Building toward a career at the intersection of code, art, and human experience.</p>
+      <p class="hero-bio">CS student at UConn with a passion for building worlds — blending code, art, and interactive design into games that feel alive.</p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">View Work</a>
         <a href="#contact" class="btn btn-outline">Get in Touch</a>
@@ -633,8 +633,10 @@
         <div class="hero-frame-corner tr"></div>
         <div class="hero-frame-corner bl"></div>
         <div class="hero-frame-corner br"></div>
-        <div class="hero-frame-inner" style="padding: 0; border: none;">
-          <img src="profile.jpg" alt="Eric Dominguez" style="width: 100%; height: 100%; object-fit: cover; border-radius: 2px;" />
+        <div class="hero-frame-inner">
+          <div class="avatar-placeholder">ED</div>
+          <p class="frame-label">Eric Dominguez<br>UConn — Computer Science</p>
+          <span class="frame-tag">Open to opportunities</span>
         </div>
       </div>
     </div>
@@ -651,23 +653,11 @@
       <p class="section-label">About</p>
       <h2 class="section-title">Developer<br>& Artist</h2>
       <p class="section-body">
-        During quarantine, I took it upon myself to learn Python — no class, no assignment, just a YouTube video and a genuine curiosity to create. That initiative became the foundation of everything that followed.
+        I'm a Computer Science student at the University of Connecticut, drawn to the intersection of systems-level programming and visual creativity. I want to build games — not just play them — and I'm working toward that with hands-on experience in both code and design.
       </p>
       <br>
       <p class="section-body">
-        I'm a first-generation college student in my fifth year at UConn, and every step of this path has been intentional. Switching schools wasn't a setback — it was the decision that led me to study abroad in Seoul, where a whole new perspective on creativity, technology, and culture opened up for me. I came back knowing I wanted to chase that feeling again. I want to work internationally, build things that matter, and be surrounded by people who feel the same way about their work that I do.
-      </p>
-      <br>
-      <p class="section-body">
-        Outside of code, I've spent years working directly with communities — speaking at protests, holding hearings with city officials, organizing with nonprofits. I got into that work because I didn't want the communities I grew up in to keep facing the same barriers I did. One of those barriers was access to opportunity. That's part of why game development feels personal to me — I want to create experiences for people who, like me, didn't always see themselves represented in the room.
-      </p>
-      <br>
-      <p class="section-body">
-        I'm drawn to the intersection of technical depth and creative freedom — someone who understands how the program works and has a say in how it feels. When I'm not coding, I'm feeding my nerd side: anime, music events, conventions, museums. Anything that stretches creativity in a new direction.
-      </p>
-      <br>
-      <p class="section-body" style="font-style: italic; color: var(--fg);">
-        I don't see this as a 9-to-5. I see it as finding my people.
+        My background in systems programming and cybersecurity gives me a strong technical foundation, and I'm actively developing the artistic side to match.
       </p>
     </div>
 
@@ -786,8 +776,8 @@
     </div>
 
     <div class="contact-links reveal">
-      <a href="/cdn-cgi/l/email-protection#385d4a515b165c575551565f4d5d42784d5b575656165d5c4d" class="contact-link">
-        <span><span class="__cf_email__" data-cfemail="01647368622f656e6c686f6674647b4174626e6f6f2f646574">[email&#160;protected]</span></span>
+      <a href="mailto:eric.dominguez@uconn.edu" class="contact-link">
+        <span>eric.dominguez@uconn.edu</span>
         <span class="contact-link-arrow">↗</span>
       </a>
       <a href="https://github.com/" target="_blank" class="contact-link">
@@ -811,9 +801,19 @@
     <span>UConn · Computer Science · Game Art & Dev</span>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
-        if (entry.isIntersec
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
